@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alif Noor Rachman - Terminal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #000000;
+        font-family: 'Press Start 2P', monospace;
+        color: #00ff41; /* Matrix Green */
+      }
+
+      /* Terminal Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        background: #001100;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #00ff41; 
+        border: 2px solid #000;
+      }
+
+      /* CRT Flicker Animation */
+      @keyframes flicker {
+        0% { opacity: 0.95; }
+        5% { opacity: 0.8; }
+        10% { opacity: 0.9; }
+        15% { opacity: 0.5; }
+        20% { opacity: 0.95; }
+        100% { opacity: 0.95; }
+      }
+
+      /* Scanline Effect */
+      .crt::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        z-index: 50;
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+      }
+      
+      .terminal-shadow {
+        text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+      }
+      
+      .box-glow {
+        box-shadow: 0 0 10px #00ff41, inset 0 0 5px #00ff41;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.7",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.2",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.559.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
